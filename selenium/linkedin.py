@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from api import password, email
 from selenium.webdriver.common.action_chains import ActionChains
 
-service = Service(executable_path="chromedriver.exe")
+service = Service(executable_path="../chromedriver.exe")
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
 options.add_argument("window-size=1200x600")

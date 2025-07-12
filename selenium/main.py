@@ -4,7 +4,7 @@ import  time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-service = Service(executable_path="chromedriver.exe")
+service = Service(executable_path="../chromedriver.exe")
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True )
 driver = webdriver.Chrome(service=service, options=options)
