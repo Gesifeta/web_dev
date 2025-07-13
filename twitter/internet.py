@@ -25,14 +25,15 @@ class InternetSpeedTwitterBot:
         time.sleep(60)
         self.up = self.driver.find_element(By.CLASS_NAME,'download-speed').text
         self.down = self.driver.find_element(By.CLASS_NAME,'upload-speed').text
-    def twitter_login(self,username,password):
+    def twitter_login(self,email,username,password):
         self.driver.get("https://x.com")
         self.wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div[1]/div/div/div[3]/div[4]/a/div/span/span'))).click()
         self.wait.until(EC.presence_of_element_located((By.NAME,"text")))
-        self.driver.find_element(By.NAME,"text").send_keys(username)
-        self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME,"css-175oi2r"))).click()
-        self.wait.until(EC.presence_of_element_located((By.NAME,"password")))
-        self.driver.find_element(By.NAME,"password").send_keys(password)
-        self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME,"css-175oi2r"))).click()
+        self.driver.find_element(By.NAME,"text").send_keys(email)
+        self.wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/button[2]/div'))).click()
+        self.wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input'))).send_keys(username)
+        self.wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/button/div/span/span'))).click()
+        self.wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input'))).send_keys(password)
+        self.wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/button/div'))).click()
         self.wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[1]/div/div/div/div[1]/button/div/svg/g/path'))).click()
 
