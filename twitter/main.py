@@ -3,9 +3,9 @@ from internet import InternetSpeedTwitterBot
 
 PROMISED_DOWN = 65
 PROMISED_UP = 10
-TWITTER_EMAIL = "adamgemechu@gmail.com"
-TWITTER_USERNAME="adam_gemechu"
-TWITTER_PASSWORD = "q8z_u!jd3'kDK&)"
+TWITTER_EMAIL = "adahu@gmail.com"
+TWITTER_USERNAME="adamechu"
+TWITTER_PASSWORD = "q8z_ud3'kDK&)"
 
 bot = InternetSpeedTwitterBot()
 
